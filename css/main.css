@@ -1,15 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&family=Roboto+Slab:wght@400;700&family=Roboto:wght@400;500;700;900&display=swap');
 
-/* font-family: 'Roboto', sans-serif;
-font-family: 'Roboto Mono', monospace;
-font-family: 'Roboto Slab', serif; */
+
+:root {
+    --color-primary: #48cfad;
+    --color-second: #e6e9ed; 
+    --color-white: #FFFFFF;
+    --color-black: #000000;
+    --typography-roboto:'Roboto', sans-serif;
+    --typography-roboto-mono:'Roboto Mono', monospace;
+    --typography-roboto-slab:'Roboto Slab', serif;
+}
 
 html {
     font-size: 62.5%;
 }
 
 body {
-    font-family: 'Roboto Mono', monospace;
+    font-family: var(--typography-roboto-mono);
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -20,7 +27,7 @@ body {
 a {
     text-decoration: none;
     display: inline;
-    color: #000;
+    color: var(--color-black);
 }
 
 header {
@@ -34,7 +41,7 @@ header .header-icons-container {
     width: 100%;
     height: 50px;
     display: grid;
-    background-color: #47cfac;
+    background-color: var(--color-primary);
 }
 
 header .header-icons-container .icons {
@@ -49,7 +56,7 @@ header .header-icons-container .icons {
 }
 
 header .header-icons-container .icons span {
-    color: white;
+    color: var(--color-white);
 }
 
 nav {
@@ -76,11 +83,24 @@ nav .profile-link {
 }
 
 nav .profile-link a {
-    color: #000;
+    color: var(--color-black);
     text-decoration: underline;
     font-size: 1.8rem;
     font-weight: bold;
 }
+
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    background-color: #22272d;
+    border-top: 30px solid var(--color-primary);
+    color: var(--color-white);
+}
+
+/*----------- pagina index.html ----------*/
 
 .home-main {
     width: 100vw;
@@ -105,8 +125,8 @@ nav .profile-link a {
 }
 
 .main-background-container h1 {
-    color: white;
-    font-family: 'Roboto Mono', monospace;
+    color: var(--color-white);
+    font-family: var(--typography-roboto-mono);
     font-size: 3rem;
     font-weight: 700;
     letter-spacing: 10px;
@@ -115,19 +135,19 @@ nav .profile-link a {
 .main-background-container button {
     width: 110px;
     height: 50px;
-    background-color: #47cfac;
-    color: #000;
+    background-color: var(--color-primary);
+    color: var(--color-black);
     font-size: 1.7rem;
     font-weight: bolder;
     cursor: pointer;
 }
 
-/*----------- pagina blog.html ----------*/
+/*----------- pagina blogs.html ----------*/
 
 .main-blogs .main-section--notices {
     height: auto;
     padding-bottom: 30px;
-    background-color: #e6e9ed;
+    background-color: var(--color-second);
 }
 
 .section-notice--preview {
@@ -171,12 +191,13 @@ nav .profile-link a {
     padding: 10px 20px;
     font-size: 1.2rem;
     font-weight: bold;
-    border: 1px solid #47cfac;
+    border: 1px solid var(--color-primary);
     text-decoration: none;
 }
 
 .main-section--blogs {
     width: 80%;
+    max-width: 1024px;
     height: auto;
     margin: 0 auto;
     margin-bottom: 30px;
@@ -186,7 +207,7 @@ nav .profile-link a {
     text-align: center;
     padding: 16px 0;
     font-weight: bold;
-    border-bottom: 3px solid #e6e9ed;;
+    border-bottom: 3px solid var(--color-second);;
 }
 
 .section-blogs--preview {
@@ -213,18 +234,140 @@ nav .profile-link a {
     margin-bottom: 16px;
 }
 
-footer .footer-color {
-    width: 100%;
-    height: 30px;
-    background-color: #47cfac;
+/*----------- pagina blog.html ----------*/
+
+.main-section--blog {
+    width: 95%;
+    margin: 0 auto;
 }
 
-footer div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.main-section--blog>img {
     width: 100%;
-    height: 80px;
-    background-color: #22272d;
-    color: white;
+    margin-bottom: 30px;
+}
+
+.section-blog--text {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.section-blog--text>h3 {
+    padding-bottom: 24px;
+    border-bottom: 3px solid var(--color-second);
+}
+
+.section-blog--text>h1 {
+    font-size: 3.5rem;
+    font-weight: bolder;
+}
+
+.main-section--contact {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, 30%);
+    column-gap: 300px;
+    grid-template-rows: 300px;
+    place-content: center;
+    align-items: center;
+    background-color: var(--color-second);
+}
+
+.section-contact--link {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 50% 50%;
+}
+
+.section-contact--link>img {
+    width: 100px;
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+}
+
+.section-contact--link>a {
+    grid-column: 2 / 3;
+    text-decoration: underline;
+}
+
+.section-contact--link>p {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.section-write--link {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: 50% 50%;
+}
+
+.section-write--link>img {
+    width: 100px;
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+}
+
+.section-write--link>a {
+    grid-column: 2 / 3;
+    text-decoration: underline;
+}
+
+.section-write--link>p {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+/*----------- pagina perfil.html ----------*/
+
+.section-profile--about {
+    width: 100%;
+    height: auto;
+    margin-bottom: 32px;
+}
+
+.profile-about--description {
+    display: grid;
+    padding: 50px 100px ;
+    justify-items: center;
+    background-color: var(--color-second);
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: 60px 240px;
+}
+
+.profile-about--description>img {
+    width: 420px;
+    padding: 20px;
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+}
+
+.profile-about--description>h2 {
+    justify-self: left;
+    grid-column: 2 / 3;
+}
+
+.profile-about--description>p {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.section-profile--projects {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 32px;
+}
+
+.profile-projects--article {
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    justify-content: center;
+}
+
+.projects-article--resume {
+    padding: 24px;
+}
+
+.section-profile--projects>h2 {
+    text-align: center;
+    border-bottom: 2px solid var(--color-second);
+    padding-bottom: 16px;
 }
